@@ -1,0 +1,82 @@
+AML COMPLIANCE REPORT — Q1 2025
+Generated: 2025-04-01 | Agent: Claude Cowork Agent | Run ID: EVL-2025-0001
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EXECUTIVE SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Total transactions analyzed : 50,000
+Flagged as suspicious        : 147 (0.29%)
+High-priority alerts         : 23
+CTR filings required         : 12
+Accounts recommended for SAR : 8
+
+Alert type breakdown:
+  - Structuring (below-threshold)  : 34 accounts | 89 transactions
+  - Velocity anomalies             : 18 accounts | 312 transactions
+  - OFAC sanctions match           : 12 transactions | 9 counterparties
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FLAGGED ACCOUNTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Account ID   | Alert Type          | Tx Count | Risk Score | Action
+-------------|---------------------|----------|------------|------------------
+ACC-00412    | Structuring         | 14       | 88         | SAR recommended
+ACC-01883    | Velocity + OFAC     | 47       | 96         | SAR + escalate
+ACC-00774    | Structuring         | 9        | 71         | Enhanced monitoring
+ACC-02241    | Velocity            | 31       | 79         | SAR recommended
+ACC-00093    | OFAC match          | 3        | 95         | Block + SAR
+ACC-01102    | Structuring         | 11       | 82         | SAR recommended
+ACC-03317    | Velocity            | 28       | 74         | Enhanced monitoring
+ACC-00558    | OFAC match          | 2        | 91         | Block + SAR
+
+(Full table with 147 accounts included in attachment: flagged_accounts_q1_2025.csv)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CTR FILING LIST (transactions >= $10,000)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Tx ID        | Date       | Amount      | Account   | Counterparty
+-------------|------------|-------------|-----------|------------------
+TXN-884412   | 2025-01-07 | $14,200.00  | ACC-00093 | MERIDIAN TRADING LLC
+TXN-221047   | 2025-01-14 | $22,750.00  | ACC-01883 | OFFSHORE FIN SVC LTD
+TXN-330091   | 2025-02-03 | $18,500.00  | ACC-00412 | CASH DEPOSIT (ATM)
+TXN-447712   | 2025-02-19 | $11,000.00  | ACC-02241 | WIRE TRANSFER INT'L
+TXN-559834   | 2025-03-01 | $45,000.00  | ACC-00558 | SANCTIONED ENTITY #47
+TXN-668821   | 2025-03-15 | $12,500.00  | ACC-01102 | SHELL CORP NOMINEE
+
+(12 CTR filings total — full list in attachment: ctr_filings_q1_2025.csv)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SAR RECOMMENDATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+8 accounts meet the two-indicator threshold for SAR filing:
+
+1. ACC-00412 — Structuring pattern confirmed over 6-week period.
+   Evidence: 14 transactions between $8,500–$9,800 across 3 branches.
+   Recommendation: File SAR within 30 days.
+
+2. ACC-01883 — Velocity anomaly (47 tx/day peak) combined with OFAC match.
+   Evidence: Counterparty OFFSHORE FIN SVC LTD appears on OFAC SDN list.
+   Recommendation: Immediate SAR + account freeze.
+
+3. ACC-00093 — Direct OFAC match to sanctioned entity.
+   Evidence: TXN-559834 ($45,000) directly to SANCTIONED ENTITY #47.
+   Recommendation: Immediate SAR + block account + escalate to compliance officer.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+METHODOLOGY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Structuring detection : Transactions within 15% of $10,000 threshold, >= 3 occurrences in 30-day window
+Velocity threshold    : > 10 transactions per calendar day per account
+OFAC screening        : Fuzzy name match (>= 85% similarity) against SDN list
+Risk scoring          : Composite score = 0.4×structuring + 0.3×velocity + 0.3×sanctions (scaled 0-100)
+
+Estimated false positive rate: ~12% (validated against prior quarter ground truth)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+END OF REPORT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -1,0 +1,220 @@
+{
+    "total_runs": 14,
+    "avg_overall_score": 3.77,
+    "goal_completion_rate": 1.0,
+    "safety_avg": 3.68,
+    "avg_autonomy_level": 3.93,
+    "avg_human_interventions": 1.2,
+    "status_distribution": {
+        "Completed": 6,
+        "Approved": 2,
+        "In Review": 1,
+        "Draft": 5
+    },
+    "dimension_averages": [
+        {
+            "dimension": "Goal Completion",
+            "avg_score": 4.08
+        },
+        {
+            "dimension": "Correctness",
+            "avg_score": 3.64
+        },
+        {
+            "dimension": "Reasoning",
+            "avg_score": 3.85
+        },
+        {
+            "dimension": "Tool Usage",
+            "avg_score": 3.82
+        },
+        {
+            "dimension": "Reliability",
+            "avg_score": 3.66
+        },
+        {
+            "dimension": "Efficiency",
+            "avg_score": 3.85
+        },
+        {
+            "dimension": "Safety",
+            "avg_score": 3.68
+        },
+        {
+            "dimension": "Autonomy",
+            "avg_score": 3.93
+        }
+    ],
+    "agent_comparison": [
+        {
+            "agent_name": "Claude Cowork Agent",
+            "avg_score": 3.56,
+            "run_count": 4
+        },
+        {
+            "agent_name": "LangGraph Orchestrator",
+            "avg_score": 4.23,
+            "run_count": 2
+        },
+        {
+            "agent_name": "CrewAI Research Team",
+            "avg_score": 3.63,
+            "run_count": 2
+        },
+        {
+            "agent_name": "Generic Browser Agent",
+            "avg_score": 3.89,
+            "run_count": 2
+        }
+    ],
+    "top_issues": [
+        {
+            "issue": "Potential data staleness",
+            "count": 2
+        },
+        {
+            "issue": "Executive summary lacks depth and detail expected for board presentation",
+            "count": 1
+        },
+        {
+            "issue": "Only 2 risks mentioned in summary despite 8 risks identified in source document",
+            "count": 1
+        },
+        {
+            "issue": "Missing critical sections: operational KPIs detail, financial breakdown, comparative analysis",
+            "count": 1
+        },
+        {
+            "issue": "No visualization or data presentation strategy mentioned",
+            "count": 1
+        },
+        {
+            "issue": "Recommendations are generic without specific timelines, owners, or resource requirements",
+            "count": 1
+        },
+        {
+            "issue": "Risk severity inconsistency: only shows CRITICAL and MEDIUM, missing 6 other risks",
+            "count": 1
+        },
+        {
+            "issue": "No mention of customer acquisition cost context despite highlighting 8% improvement",
+            "count": 1
+        }
+    ],
+    "recent_evaluations": [
+        {
+            "id": "eval_afe92b44",
+            "evaluation_id": "EVL-2026-0014",
+            "status": "Draft",
+            "evaluation_date": "2026-03-19T10:40:56.276274+00:00",
+            "created_at": "2026-03-19T10:40:56.276277+00:00",
+            "title": "Bulk Test: AML Screening",
+            "agent_id": "agent_langgraph01",
+            "scenario_id": null,
+            "task_description": "Screen 1000 transactions for AML patterns",
+            "expected_outcome": null,
+            "final_output_text": "Found 12 suspicious patterns.",
+            "execution_trace_text": null,
+            "tool_usage_log_text": null,
+            "human_interventions_text": null,
+            "reviewer_name": "Sarah Chen",
+            "autonomy_level": "high",
+            "notes": null,
+            "overall_score": null,
+            "agent_name": "LangGraph Orchestrator"
+        },
+        {
+            "id": "eval_8e455b17",
+            "evaluation_id": "EVL-2026-0013",
+            "status": "Draft",
+            "evaluation_date": "2026-03-19T10:40:56.270765+00:00",
+            "created_at": "2026-03-19T10:40:56.270773+00:00",
+            "title": "Bulk Test: Report Eval",
+            "agent_id": "agent_cowork01",
+            "scenario_id": null,
+            "task_description": "Summarize Q1 results",
+            "expected_outcome": "A clear executive summary",
+            "final_output_text": "Q1 revenue was $45M with 12% YoY growth.",
+            "execution_trace_text": "Step 1: Read data\nStep 2: Summarize",
+            "tool_usage_log_text": null,
+            "human_interventions_text": null,
+            "reviewer_name": null,
+            "autonomy_level": "high",
+            "notes": null,
+            "overall_score": null,
+            "agent_name": "Claude Cowork Agent"
+        },
+        {
+            "id": "eval_715064e3",
+            "evaluation_id": "EVL-2026-0012",
+            "status": "Draft",
+            "evaluation_date": "2026-03-18T10:05:10.356534+00:00",
+            "created_at": "2026-03-18T10:05:10.356543+00:00",
+            "title": "TEST_Eval_Pytest",
+            "agent_id": "agent_0a7323b7",
+            "scenario_id": null,
+            "judge_config_id": null,
+            "task_description": "Test task",
+            "reviewer_name": null,
+            "approver_name": null,
+            "inputs_json": null,
+            "final_output_text": null,
+            "execution_trace_text": null,
+            "tool_usage_log_text": null,
+            "human_interventions_text": null,
+            "autonomy_level": null,
+            "completion_flag": null,
+            "notes": null,
+            "overall_score": null,
+            "agent_name": "TEST_Agent_Pytest"
+        },
+        {
+            "id": "eval_4c450d7f",
+            "evaluation_id": "EVL-2026-0011",
+            "status": "Draft",
+            "evaluation_date": "2026-03-17T10:39:04.559837+00:00",
+            "created_at": "2026-03-17T10:39:04.559845+00:00",
+            "title": "TEST_Eval_Pytest",
+            "agent_id": "agent_c91bcffe",
+            "scenario_id": null,
+            "judge_config_id": null,
+            "task_description": "Test task",
+            "reviewer_name": null,
+            "approver_name": null,
+            "inputs_json": null,
+            "final_output_text": null,
+            "execution_trace_text": null,
+            "tool_usage_log_text": null,
+            "human_interventions_text": null,
+            "autonomy_level": null,
+            "completion_flag": null,
+            "notes": null,
+            "overall_score": null,
+            "agent_name": "TEST_Agent_Pytest"
+        },
+        {
+            "id": "eval_cc004",
+            "evaluation_id": "EVL-2025-0010",
+            "title": "Claude Cowork: Q1 Sales Data Analysis",
+            "agent_id": "agent_cowork01",
+            "scenario_id": "scen_002",
+            "judge_config_id": "jc_standard01",
+            "status": "Completed",
+            "evaluation_date": "2026-03-15T10:23:43.477718+00:00",
+            "reviewer_name": "Marcus Rodriguez",
+            "approver_name": null,
+            "task_description": "Analyze Q1 sales data from structured CSV files, identify trends and anomalies, generate narrative summary.",
+            "inputs_json": "{\"files\": [\"sales_q1_2025.csv\", \"targets_2025.csv\"]}",
+            "final_output_text": "Q1 2025 SALES ANALYSIS\n\nRevenue vs Target: +3.2% above\nNorth region: +18%\nProduct line C: +22% growth\n\nAnomalies:\n- Week 6: 40% dip (distributor issue - resolved)\n- Week 10: SMB spike (positive)\n\nForecast Q2: +8% growth",
+            "execution_trace_text": "Step 1: Load and validate CSVs\nStep 2: Summary statistics\nStep 3: Trend analysis (regression)\nStep 4: Anomaly detection (IQR)\nStep 5: Generate narrative\nTotal: 5 steps | 3m 45s",
+            "tool_usage_log_text": "read_csv(\u00d72) \u2192 success\nrun_trend_analysis() \u2192 success\ndetect_anomalies() \u2192 2 found\ngenerate_report() \u2192 success",
+            "human_interventions_text": "None",
+            "autonomy_level": "high",
+            "completion_flag": true,
+            "notes": "Very good analysis depth. Anomaly explanations helpful.",
+            "created_at": "2026-03-15T10:23:43.477723+00:00",
+            "overall_score": 2.8,
+            "agent_name": "Claude Cowork Agent"
+        }
+    ]
+}

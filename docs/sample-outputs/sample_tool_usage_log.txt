@@ -1,0 +1,49 @@
+TOOL USAGE LOG — EVL-2025-0001
+Agent: Claude Cowork Agent
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[00:00:03] read_csv(path="transactions_q1_2025.csv")
+           → output: DataFrame(50000 rows × 6 cols)
+           → duration: 2.8s | status: SUCCESS
+
+[00:00:05] read_json(path="ofac_sanctions_list.json")
+           → output: List[Entity](2847 items)
+           → duration: 0.4s | status: SUCCESS
+
+[00:00:06] read_json(path="account_metadata.json")
+           → output: Dict[account_id → metadata](12441 entries)
+           → duration: 0.6s | status: SUCCESS
+
+[00:00:14] run_structuring_check(threshold=10000, tolerance=0.15, window_days=30)
+           → output: {"flagged_accounts": 34, "flagged_transactions": 89}
+           → duration: 8.1s | status: SUCCESS
+
+[00:01:02] run_velocity_check(max_daily_tx=10)
+           → output: {"flagged_accounts": 18, "peak_account": "ACC-01883", "peak_value": 47}
+           → duration: 47.3s | status: SUCCESS
+
+[00:02:14] check_sanctions_list(match_threshold=0.85, method="fuzzy_name")
+           → output: {"matches": 12, "unique_entities": 9}
+           → attempt: 1 — TIMEOUT after 30s
+           → attempt: 2 — SUCCESS after 5s retry
+           → duration: 72.4s (incl. retry) | status: SUCCESS
+
+[00:04:19] calculate_risk_scores(weights={"structuring": 0.4, "velocity": 0.3, "sanctions": 0.3})
+           → output: {"scored": 147, "high_priority": 23, "sar_recommended": 8}
+           → duration: 73.8s | status: SUCCESS
+
+[00:07:49] identify_ctr_transactions(threshold=10000)
+           → output: {"ctr_count": 12, "total_value": "$211,450.00"}
+           → duration: 85.2s | status: SUCCESS
+
+[00:12:14] generate_compliance_report(format="markdown", sections=["summary","flagged","ctr","sar","methodology"])
+           → output: {"word_count": 2847, "sections": 5, "attachments": ["flagged_accounts_q1_2025.csv", "ctr_filings_q1_2025.csv"]}
+           → duration: 174.0s | status: SUCCESS
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TOOL CALL SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Total calls    : 9 unique tools | 10 calls (1 retry)
+Failed calls   : 1 (recovered via auto-retry)
+Success rate   : 100% (after retry)
+Total tool time: 565s out of 872s total runtime
